@@ -1,0 +1,6 @@
+﻿services:
+  recipebook.api:
+    image: recipebook.api
+    build:
+      context: .
+      dockerfile: RecipeBook.Api/Dockerfile

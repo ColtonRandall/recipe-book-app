@@ -1,0 +1,21 @@
+# This is a generated file. Not intended for manual editing.
+services:
+  recipebook.api:
+    build:
+      context: "/Users/coltonrandall/Developer/repos/RecipeBook"
+      dockerfile: "RecipeBook.Api/Dockerfile"
+      target: "base"
+    command: []
+    entrypoint:
+    - "dotnet"
+    - "/app/bin/Debug/net7.0/RecipeBook.Api.dll"
+    environment:
+      ASPNETCORE_ENVIRONMENT: "Development"
+      DOTNET_USE_POLLING_FILE_WATCHER: "true"
+    image: "recipebook.api:dev"
+    ports: []
+    volumes:
+    - "/Users/coltonrandall/.nuget/packages:/root/.nuget/packages"
+    - "/Users/coltonrandall/Developer/repos/RecipeBook/RecipeBook.Api:/app:rw"
+    - "/Users/coltonrandall/Developer/repos/RecipeBook:/src:rw"
+    working_dir: "/app"
