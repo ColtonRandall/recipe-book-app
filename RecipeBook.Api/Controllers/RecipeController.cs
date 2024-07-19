@@ -1,4 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
+using RecipeBook.Api.BusinessLogic;
+using RecipeBook.Api.Models;
 
 namespace RecipeBook.Api.Controllers;
 
@@ -8,34 +10,8 @@ public class RecipeController : ControllerBase
 {
     public IActionResult AddNewRecipe(RecipeModel recipeModel)
     {
-        var businessLogic = new BusinessLogic();
+        var businessLogic = new RecipeBusinessLogic();
         businessLogic.SaveRecipe(recipeModel);
         return Ok();
     }
-
-    public class BusinessLogic
-    {
-        public void SaveRecipe(RecipeModel recipeModel)
-        {
-            // Validate stuff
-
-            var dataAccess = new DataAccess();
-            dataAccess.SaveRecipeToDatabase(recipeModel);
-            
-        }
-    }
-
-    public class DataAccess
-    {
-        public void SaveRecipeToDatabase(RecipeModel recipeModel)
-        {
-            // Save to DB
-        }
-    }
-    
-    public class RecipeModel
-    {
-        public string Title { get; set; }
-    }
-    
 }
