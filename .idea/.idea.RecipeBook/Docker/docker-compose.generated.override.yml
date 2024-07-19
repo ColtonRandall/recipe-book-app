@@ -3,7 +3,7 @@ services:
   recipebook.api:
     build:
       context: "/Users/coltonrandall/Developer/repos/RecipeBook"
-      dockerfile: "RecipeBook.Api/Dockerfile"
+      dockerfile: "src/RecipeBook.Api/Dockerfile"
       target: "base"
     command: []
     entrypoint:
@@ -16,6 +16,6 @@ services:
     ports: []
     volumes:
     - "/Users/coltonrandall/.nuget/packages:/root/.nuget/packages"
-    - "/Users/coltonrandall/Developer/repos/RecipeBook/RecipeBook.Api:/app:rw"
+    - "/Users/coltonrandall/Developer/repos/RecipeBook/src/RecipeBook.Api:/app:rw"
     - "/Users/coltonrandall/Developer/repos/RecipeBook:/src:rw"
     working_dir: "/app"

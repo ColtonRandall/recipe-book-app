@@ -3,4 +3,6 @@
     image: recipebook.api
     build:
       context: .
-      dockerfile: RecipeBook.Api/Dockerfile
+      dockerfile: src/RecipeBook.Api/Dockerfile
+    ports:
+      - 44457:80
