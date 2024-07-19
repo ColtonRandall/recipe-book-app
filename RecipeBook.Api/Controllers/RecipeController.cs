@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
-using RecipeBook.Api.BusinessLogic;
-using RecipeBook.Api.Models;
+using RecipeBook.ServiceLibrary.Domains;
+using RecipeBook.ServiceLibrary.Entities;
 
 namespace RecipeBook.Api.Controllers;
 
@@ -8,10 +8,10 @@ namespace RecipeBook.Api.Controllers;
 [ApiController]
 public class RecipeController : ControllerBase
 {
-    public IActionResult AddNewRecipe(RecipeModel recipeModel)
+    public IActionResult AddNewRecipe(RecipeEntity recipeEntity)
     {
-        var businessLogic = new RecipeBusinessLogic();
-        businessLogic.SaveRecipe(recipeModel);
+        var businessLogic = new Recipe();
+        businessLogic.SaveRecipe(recipeEntity);
         return Ok();
     }
 }
