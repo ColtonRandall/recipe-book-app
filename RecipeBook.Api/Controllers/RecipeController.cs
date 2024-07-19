@@ -8,7 +8,8 @@ namespace RecipeBook.Api.Controllers;
 [ApiController]
 public class RecipeController : ControllerBase
 {
-    public IActionResult AddNewRecipe(RecipeEntity recipeEntity)
+    [HttpGet]
+    public IActionResult AddNewRecipe([FromQuery]RecipeEntity recipeEntity)
     {
         var businessLogic = new Recipe();
         businessLogic.SaveRecipe(recipeEntity);
